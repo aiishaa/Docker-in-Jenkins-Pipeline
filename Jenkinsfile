@@ -20,6 +20,7 @@ pipeline {
             sh 'docker build -t aishafathy/my-repo-123:jenko .'
             sh "echo $PASS | docker login --username $USER --password-stdin"
             sh 'docker push aishafathy/my-repo-123:jenko'
+          }
         }
       }
     }
