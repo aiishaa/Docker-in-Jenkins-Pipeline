@@ -1,6 +1,6 @@
 def buildJar() {
     echo "building the application..."
-    sh 'apt-get install git'
+    sh "mvn -Dmaven.test.failure.ignore=true clean package"
 } 
 
 def buildImage() {
