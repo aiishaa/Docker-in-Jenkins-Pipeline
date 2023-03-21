@@ -1,6 +1,6 @@
 def buildJar() {
     echo "building the application..."
-    sh 'cd /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/Maven'
+    sh 'cp /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/Maven/POM.xml /var/jenkins_home/workspace/dockerImage'
     sh 'mvn package'
     sh 'cd ..'
 } 
