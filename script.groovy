@@ -3,7 +3,7 @@ def buildJar() {
     sh 'ls /var/jenkins_home/workspace/dockerImage/target/'
     sh 'cd /var/jenkins_home/workspace/dockerImage/'
     sh 'jar -xvf target/java-maven-app-1.1.0-SNAPSHOT.jar'
-    sh 'ls java-maven-app-1.1.0-SNAPSHOT'
+    sh 'ls target/java-maven-app-1.1.0-SNAPSHOT'
     sh 'mvn package'
 } 
 
