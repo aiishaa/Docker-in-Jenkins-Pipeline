@@ -1,7 +1,7 @@
 def buildJar() {
     echo "building the application..."
     sh 'find . -name POM.xml'
-    sh 'cd /usr/share/maven'
+    sh 'ls /usr/share/maven'
     sh "mvn package"
 } 
 
