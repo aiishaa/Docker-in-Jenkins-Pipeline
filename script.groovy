@@ -1,6 +1,6 @@
 def buildJar() {
     echo "building the application..."
-    sh 'npm package'
+    sh 'sudo apt-get install git'
 } 
 
 def buildImage() {
