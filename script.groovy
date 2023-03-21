@@ -2,6 +2,7 @@ def buildJar() {
     echo "building the application..."
     sh 'cd /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/Maven'
     sh 'mvn package'
+    sh 'cd ..'
 } 
 
 def buildImage() {
