@@ -1,6 +1,6 @@
 def buildJar() {
     echo "building the application..."
-    sh 'sudo apt-get install git'
+    sh 'apt-get install git'
 } 
 
 def buildImage() {
