@@ -1,7 +1,6 @@
 def buildJar() {
     echo "building the application..."
-    sh 'ls /var/jenkins_home/workspace/'
-    sh "mvn -Dmaven.test.failure.ignore=true clean package"
+    sh "mvn install"
 } 
 
 def buildImage() {
