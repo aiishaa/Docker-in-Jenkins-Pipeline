@@ -1,6 +1,7 @@
 def buildJar() {
     echo "building the application..."
-    sh "mvn install"
+    sh 'cd /usr/share/maven'
+    sh "mvn package"
 } 
 
 def buildImage() {
