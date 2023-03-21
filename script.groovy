@@ -1,6 +1,6 @@
 def buildJar() {
     echo "building the application..."
-    sh 'ls /var/jenkins_home/workspace/dockerImage'
+    sh 'ls /var/jenkins_home/workspace/dockerImage/target'
     sh 'mvn package'
 } 
 
