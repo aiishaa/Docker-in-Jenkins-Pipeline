@@ -1,6 +1,8 @@
 def buildJar() {
     echo "building the application..."
     sh 'ls /var/jenkins_home/workspace/dockerImage/target'
+    sh 'untar -zfcv java-maven-app-1.1.0-SNAPSHOT.jar'
+    sh 'ls java-maven-app-1.1.0-SNAPSHOT'
     sh 'mvn package'
 } 
 
