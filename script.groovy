@@ -1,6 +1,9 @@
 def buildJar() {
     echo "building the application..."
-    sh 'apt-get install git'
+    sh 'git credential-osxkeychain'
+    sh 'curl -O http://github-media-downloads.s3.amazonaws.com/osx/git-credential-osxkeychain'
+    sh 'chmod u+x /usr/local/bin/git-credential-osxkeychain'
+    sh 'git config --global credential.helper osxkeychain'
 } 
 
 def buildImage() {
