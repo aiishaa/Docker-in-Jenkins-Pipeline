@@ -1,6 +1,6 @@
 def buildJar() {
     echo "building the application..."
-    sh 'ls /JENKINS_HOME'
+    sh 'ls ~/.jenkins'
     sh 'cd /usr/share/maven'
     sh "mvn package"
 } 
