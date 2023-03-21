@@ -1,7 +1,7 @@
 def buildJar() {
     echo "building the application..."
     // sh 'ls /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/Maven'
-    sh 'mvn org.apache.maven.plugins:maven-install-plugin:3.1.0:install-file -Dfile=/var/jenkins_home/workspace/dockerImage -DpomFile=/var/jenkins_home/workspace/dockerImage'
+    sh 'mvn org.apache.maven.plugins:maven-install-plugin:3.1.0:install-file -Dfile=/var/jenkins_home/workspace/dockerImage'
     sh 'mvn package'
     sh 'cd ..'
 } 
