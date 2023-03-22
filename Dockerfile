@@ -1,19 +1,12 @@
-# Install Docker
+FROM node:18-alpine
+ENV NODE_ENV=production
 
-FROM jenkins/jenkins:lts
+WORKDIR /app
 
-USER root
+COPY ["package.json", "package-lock.json*", "./"]
 
-RUN apt-get update -qq
-RUN apt-get -y install -qq apt-transport-https ca-certificates curl gnupg2 software-properties-common 
-RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-RUN add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/debian \
-   $(lsb_release -cs) \
-   stable" 
-RUN apt-get update -qq
-RUN apt-get -y install docker-ce
+RUN npm install --production
 
-# COmpose
+COPY . .
 
-RUN usermod -aG docker jenkins
+CMD [ "node", "server.js" ]
