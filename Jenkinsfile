@@ -1,24 +1,32 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage("init") {
             steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
+                script {
+                    gv = load "script.groovy"
                 }
             }
         }
-        stage('Deliver') {
+        stage("build jar") {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                script {
+                    gv.buildJar()
+                }
+            }
+        }
+        stage("build image") {
+            steps {
+                script {
+                    gv.buildImage()
+                }
+            }
+        }
+        stage("deploy") {
+            steps {
+                script {
+                    gv.deployApp()
+                }
             }
         }
     }
