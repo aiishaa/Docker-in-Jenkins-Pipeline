@@ -1,10 +1,3 @@
-def buildJar() {
-    echo "building the application..."
-//     sh 'find . -name POM.xml'
-//     sh 'ls /usr/share/jenkins'
-//     sh 'ls /usr/share/xml'
-//     sh "mvn package"
-} 
 
 def buildImage() {
     echo "building the docker image..."
