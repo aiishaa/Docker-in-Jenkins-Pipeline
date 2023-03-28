@@ -7,7 +7,7 @@ def buildImage() {
     }
 } 
 
-def deployApp() {
+def pushImage() {
     sh 'docker push aishafathy/demo-app:jma-2.0'
 } 
 
